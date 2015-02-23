@@ -1,1 +1,20 @@
 h1 Yasuri Sample
+
+h3 =@exp
+- if @result != nil
+    .form-group
+      label Result
+      textarea.form-control type="text" id="tree" name="tree" rows="20"
+        = @result
+
+form role="form" action="/" method="post"
+  .form-group
+    label for="url" URL
+    input.form-control type="url" id="url" name="url" placeholder="Target page url" value=@url
+
+  .form-group
+    label for="tree" Tree as JSON
+    textarea.form-control type="text" id="tree" name="tree" rows="20" placeholder="Define tree as json" =@tree
+
+  .form-actions
+    button.btn type="submit" id="submit" class="btn-default" Submit

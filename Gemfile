@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'yasuri'
 
 gem 'sinatra'
 gem 'sinatra-contrib'
