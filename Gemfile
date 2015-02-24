@@ -6,4 +6,7 @@ gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'slim'
 
-gem 'passenger'
+group :development do
+  gem 'foreman'
+  gem 'heroku'
+end
