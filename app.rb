@@ -10,24 +10,38 @@ require 'json'
 require 'yasuri'
 
 set :server, 'webrick'
+# //*[@id="hnmain"]/tbody/tr[3]/td/table/tbody/tr/td[2]/a
 
 before do
   @url  = params[:url]  || "https://news.ycombinator.com/"
   @tree = params[:tree] || %Q|
 {
-  "node": "struct",
-  "name": "titles",
-  "path": "//td[@class='title'][not(@align)]",
+  "node": "pages",
+  "name": "root",
+  "path": "//a[@rel='nofollow'][text()='More']",
+  "limit": 3,
   "children": [
     {
       "node": "text",
-      "name": "title",
-      "path": "./a"
+      "name": "page_title",
+      "path": "/html/head/title"
     },
     {
-      "node": "text",
-      "name": "url",
-      "path": "./a/@href"
+      "node": "struct",
+      "name": "titles",
+      "path": "//td[@class='title'][not(@align)]",
+      "children": [
+        {
+          "node": "text",
+          "name": "title",
+          "path": "./a"
+        },
+        {
+          "node": "text",
+          "name": "url",
+          "path": "./a/@href"
+        }
+      ]
     }
   ]
 }
