@@ -9,9 +9,9 @@ html
     link href="/css/app.css" rel="stylesheet"
 
   body
+
     .container
       == yield
-
     script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.js"
     script src="/vender/assets/js/bootstrap.js"
     script src="/vender/assets/js/bootstrap/transition.js"
@@ -26,3 +26,8 @@ html
     script src="/vender/assets/js/bootstrap/collapse.js"
     script src="/vender/assets/js/bootstrap/carousel.js"
     script src="/vender/assets/js/bootstrap/affix.js"
+
+    div id="footer"
+      .container
+        .pull-right
+          = "Yasuri Version #{@version}"

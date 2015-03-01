@@ -48,6 +48,7 @@ before do
 |
   @result = nil
   @tree = JSON.pretty_generate(JSON.load(@tree))
+  @version = Yasuri::VERSION
 end
 
 get '/' do
