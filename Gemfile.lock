@@ -71,7 +71,7 @@ GEM
       unf_ext
     unf_ext (0.0.6)
     webrobots (0.1.1)
-    yasuri (0.0.6)
+    yasuri (0.0.8)
       mechanize
 
 PLATFORMS
@@ -83,4 +83,4 @@ DEPENDENCIES
   sinatra
   sinatra-contrib
   slim
-  yasuri
+  yasuri (>= 0.0.8)
